@@ -11,7 +11,7 @@ const ImportExport = () => {
   //   console.log("export done from component1.js", fruits.banana, fruits.orange);
   return (
     <div>
-      <h1>dsagsxdg</h1>
+      <h1>ImportExport</h1>
     </div>
   );
 };
