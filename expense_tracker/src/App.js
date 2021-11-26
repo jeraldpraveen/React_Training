@@ -1,4 +1,5 @@
 import "./App.css";
+import React from "react";
 import Expenses from "./components/Expenses";
 
 function App() {
@@ -28,12 +29,19 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
-  return (
-    <div className="App">
-      <h1>Expense Tracker</h1>
-      <Expenses items={expenses} />
-    </div>
+
+  return React.createElement(
+    "div",
+    {},
+    React.createElement("h1", {}, "Expense Tracker"),
+    React.createElement(Expenses, { items: expenses })
   );
+  // return (
+  //   <div className="App">
+  //     <h1>Expense Tracker</h1>
+  //     <Expenses items={expenses} />
+  //   </div>
+  // );
 }
 
 export default App;
