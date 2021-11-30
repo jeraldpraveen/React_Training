@@ -5,6 +5,11 @@ import Card from "../UI/Card";
 function ExpenseItem(props) {
   const expenseTitle = props.title;
   const expenseAmount = props.amount;
+
+  const clickHandler = () => {
+    console.log("Clicked!!!!");
+  };
+
   return (
     <Card className="expense-item">
       <ExpenseDate date={props.date} />
@@ -12,6 +17,7 @@ function ExpenseItem(props) {
         <h2>{expenseTitle}</h2>
         <div className="expense-item__price">₹{expenseAmount}</div>
       </div>
+      <button onClick={clickHandler}>Change Title</button>
     </Card>
   );
 }
