@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import Expenses from "./components/Expenses";
+import Expenses from "./components/Expenses/Expenses";
 
 function App() {
   const expenses = [
@@ -30,18 +30,18 @@ function App() {
     },
   ];
 
-  return React.createElement(
-    "div",
-    {},
-    React.createElement("h1", {}, "Expense Tracker"),
-    React.createElement(Expenses, { items: expenses })
-  );
-  // return (
-  //   <div className="App">
-  //     <h1>Expense Tracker</h1>
-  //     <Expenses items={expenses} />
-  //   </div>
+  // return React.createElement(
+  //   "div",
+  //   {},
+  //   React.createElement("h1", {}, "Expense Tracker"),
+  //   React.createElement(Expenses, { items: expenses })
   // );
+  return (
+    <div className="App">
+      <h1>Expense Tracker</h1>
+      <Expenses items={expenses} />
+    </div>
+  );
 }
 
 export default App;
