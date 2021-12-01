@@ -1,14 +1,22 @@
+import React, { useState } from "react";
+
 import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css";
 import Card from "../UI/Card";
 
 function ExpenseItem(props) {
-  const expenseTitle = props.title;
+  // useState() returns a Array
+  // First Element in Array {useState()[0]} ---> Value itself
+  // Second Element in Array {useState()[1]} ---> Update Function
+  // ==================================================================
+  // const expenseTitle = useState(props.title)[0];
+  const [expenseTitle, setExpenseTitle] = useState(props.title);
+
+  // const expenseTitle = props.title;
   const expenseAmount = props.amount;
 
   const clickHandler = () => {
-    console.log("Clicked!!!!");
-    expenseTitle = "Updated!!!!!!";
+    setExpenseTitle("Updated!!!!!!");
     console.log(expenseTitle);
   };
 
