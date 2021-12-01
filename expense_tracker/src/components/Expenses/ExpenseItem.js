@@ -5,6 +5,7 @@ import "./ExpenseItem.css";
 import Card from "../UI/Card";
 
 function ExpenseItem(props) {
+  console.log("ExpenseItem Evaluvation");
   // useState() returns a Array
   // First Element in Array {useState()[0]} ---> Value itself
   // Second Element in Array {useState()[1]} ---> Update Function
