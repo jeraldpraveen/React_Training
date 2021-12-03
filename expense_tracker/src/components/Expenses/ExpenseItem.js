@@ -18,14 +18,7 @@ function ExpenseItem(props) {
 
   const clickHandler = () => {
     setExpenseTitle("Updated!!!!!!");
-    console.log(expenseTitle);
   };
-
-  // You can update states for whatever reason you may have.(Not only in click Event)
-  // You can update states in HTTP responses also]
-  setTimeout(function () {
-    setExpenseTitle("Done");
-  }, 3000);
 
   return (
     <Card className="expense-item">
