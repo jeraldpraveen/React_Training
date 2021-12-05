@@ -32,13 +32,6 @@ const DUMMY_EXPENSES = [
 function App() {
   const [expensesList, setExpenseList] = useState(DUMMY_EXPENSES);
 
-  // return React.createElement(
-  //   "div",
-  //   {},
-  //   React.createElement("h1", {}, "Expense Tracker"),
-  //   React.createElement(Expenses, { items: expenses })
-  // );
-
   const addExpenseHandler = (expense) => {
     console.log("App.js");
     setExpenseList((prevExpenses) => {
