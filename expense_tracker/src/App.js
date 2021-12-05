@@ -37,10 +37,16 @@ function App() {
   //   React.createElement("h1", {}, "Expense Tracker"),
   //   React.createElement(Expenses, { items: expenses })
   // );
+
+  const addExpenseHandler = (expense) => {
+    console.log("App.js");
+    console.log(expense);
+  };
+
   return (
     <div className="App">
       <h1>Expense Tracker</h1>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
     </div>
   );
