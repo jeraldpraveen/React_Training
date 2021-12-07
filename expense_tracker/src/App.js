@@ -44,7 +44,7 @@ function App() {
     <div className="App">
       <h1>Expense Tracker</h1>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses items={[]} />
+      <Expenses items={expensesList} />
     </div>
   );
 }

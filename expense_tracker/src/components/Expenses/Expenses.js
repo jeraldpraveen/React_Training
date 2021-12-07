@@ -23,22 +23,20 @@ function Expenses(props) {
     );
   } else {
     return (
-      props.items.length > 0 && (
-        <Card className="expenses">
-          <ExpensesFilter
-            selected={filteredYear}
-            onChangeFilter={filterChangeHandler}
+      <Card className="expenses">
+        <ExpensesFilter
+          selected={filteredYear}
+          onChangeFilter={filterChangeHandler}
+        />
+        {filteredExpenses.map((expense) => (
+          <ExpenseItem
+            title={expense.title}
+            amount={expense.amount}
+            date={expense.date}
+            key={expense.id}
           />
-          {filteredExpenses.map((expense) => (
-            <ExpenseItem
-              title={expense.title}
-              amount={expense.amount}
-              date={expense.date}
-              key={expense.id}
-            />
-          ))}
-        </Card>
-      )
+        ))}
+      </Card>
     );
   }
 }
