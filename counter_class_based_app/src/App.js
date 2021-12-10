@@ -1,9 +1,10 @@
 import "./App.css";
+import ClassBased from "./components/ClassBased";
 
 function App() {
   return (
     <div className="App">
-      <h1>Counter Application</h1>
+      <ClassBased />
     </div>
   );
 }
