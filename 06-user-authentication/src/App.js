@@ -17,9 +17,7 @@ function App() {
 
   return (
     <div>
-      <h1 style={{ color: "white", textAlign: "center" }}>
-        USER AUTHENTICATION
-      </h1>
+      <h1 style={{ color: "white", textAlign: "center" }}>USER REGISTRATION</h1>
       <AddUser onAddUser={addUserHandler} />
       <UsersList users={usersList} />
     </div>

@@ -5,35 +5,37 @@ import Button from "../UI/Button";
 import ErrorModal from "../UI/ErrorModal";
 
 import classes from "./AddUser.module.css";
-import Wrapper from "../Helpers/Wrapper";
 
 const AddUser = (props) => {
   const nameInputRef = useRef();
-  const ageInputRef = useRef();
+  const passwordInputRef = useRef();
 
   const [error, setError] = useState();
 
   const addUserHandler = (event) => {
     event.preventDefault();
     const enteredName = nameInputRef.current.value;
-    const enteredUserAge = ageInputRef.current.value;
-    if (enteredName.trim().length === 0 || enteredUserAge.trim().length === 0) {
+    const enteredPassword = passwordInputRef.current.value;
+    if (
+      enteredName.trim().length === 0 ||
+      enteredPassword.trim().length === 0
+    ) {
       setError({
         title: "Invalid input",
-        message: "Please enter a valid name and age (non-empty values).",
+        message: "Please enter a valid name and password.",
       });
       return;
     }
-    if (Number(enteredUserAge) < 1) {
+    if (enteredPassword.length < 6) {
       setError({
-        title: "Invalid age",
-        message: "Please enter a valid age (> 0).",
+        title: "Invalid password",
+        message: "Please enter a valid password(Minimum 6 char).",
       });
       return;
     }
-    props.onAddUser(enteredName, enteredUserAge);
+    props.onAddUser(enteredName, enteredPassword);
     nameInputRef.current.value = "";
-    ageInputRef.current.value = "";
+    passwordInputRef.current.value = "";
   };
 
   const errorHandler = () => {
@@ -53,8 +55,8 @@ const AddUser = (props) => {
         <form onSubmit={addUserHandler}>
           <label htmlFor="username">Username</label>
           <input id="username" type="text" ref={nameInputRef} />
-          <label htmlFor="age">Age (Years)</label>
-          <input id="age" type="number" ref={ageInputRef} />
+          <label htmlFor="password">Password</label>
+          <input id="password" type="text" ref={passwordInputRef} />
           <Button type="submit">Add User</Button>
         </form>
       </Card>
