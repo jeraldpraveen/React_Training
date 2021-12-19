@@ -5,12 +5,15 @@ import classes from "./Login.module.css";
 import Button from "../UI/Button/Button";
 
 const emailReducer = (state, action) => {
+  if (action.type === "EMAIL_INPUT") {
+    return { value: action.val, isValid: action.val.includes("@") };
+  }
   return { value: "", isValid: false };
 };
 
 const Login = (props) => {
-  const [enteredEmail, setEnteredEmail] = useState("");
-  const [emailIsValid, setEmailIsValid] = useState();
+  // const [enteredEmail, setEnteredEmail] = useState("");
+  // const [emailIsValid, setEmailIsValid] = useState();
   const [enteredPassword, setEnteredPassword] = useState("");
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
@@ -41,8 +44,8 @@ const Login = (props) => {
   // }, [enteredEmail, enteredPassword]);
 
   const emailChangeHandler = (event) => {
+    dispatchEmail({ type: "EMAIL_INPUT", val: event.target.value });
     setEnteredEmail(event.target.value);
-    // [[formIsValid]] state is unneccessary state as it is not directly related to screen input fields
     setFormIsValid(emailState.isValid && enteredPassword.trim().length > 6);
   };
 
