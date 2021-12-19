@@ -11,32 +11,39 @@ const Login = (props) => {
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
 
-  useEffect(() => {
-    console.log("EFFECT RUNNING");
-    return () => {
-      console.log("EFFECT CLEANUP");
-    };
-  }, [enteredPassword]);
+  // useEffect(() => {
+  //   console.log("EFFECT RUNNING");
+  //   return () => {
+  //     console.log("EFFECT CLEANUP");
+  //   };
+  // }, [enteredPassword]);
 
-  useEffect(() => {
-    const identifier = setTimeout(() => {
-      console.log("Checking Form Validity");
-      setFormIsValid(
-        enteredEmail.includes("@") && enteredPassword.trim().length > 6
-      );
-    }, 2000);
-    return () => {
-      console.log("CLEANUP");
-      clearTimeout(identifier);
-    };
-  }, [enteredEmail, enteredPassword]);
+  // useEffect(() => {
+  //   const identifier = setTimeout(() => {
+  //     console.log("Checking Form Validity");
+  //     setFormIsValid(
+  //       enteredEmail.includes("@") && enteredPassword.trim().length > 6
+  //     );
+  //   }, 2000);
+  //   return () => {
+  //     console.log("CLEANUP");
+  //     clearTimeout(identifier);
+  //   };
+  // }, [enteredEmail, enteredPassword]);
 
   const emailChangeHandler = (event) => {
     setEnteredEmail(event.target.value);
+    // [[formIsValid]] state is unneccessary state as it is not directly related to screen input fields
+    setFormIsValid(
+      enteredEmail.includes("@") && enteredPassword.trim().length > 6
+    );
   };
 
   const passwordChangeHandler = (event) => {
     setEnteredPassword(event.target.value);
+    setFormIsValid(
+      enteredEmail.includes("@") && enteredPassword.trim().length > 6
+    );
   };
 
   const validateEmailHandler = () => {
