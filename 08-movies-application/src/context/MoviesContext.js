@@ -8,8 +8,18 @@ export class MoviesProvider extends Component {
     this.state = {
       director: "Shankar",
       movie: "Gentleman",
+      changeMovie: this.changeMovie,
+      changeDirector: this.changeDirector,
     };
   }
+
+  changeMovie = () => {
+    this.setState({ movie: "2.0" });
+  };
+
+  changeDirector = () => {
+    this.setState({ director: "Hari" });
+  };
 
   render() {
     return (

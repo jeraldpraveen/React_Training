@@ -3,11 +3,18 @@ import { MoviesContext } from "../context/MoviesContext";
 
 const B = () => {
   const stateObject = useContext(MoviesContext);
+
+  const changeHandler = () => {
+    stateObject.changeDirector();
+  };
+
   return (
     <div style={{ backgroundColor: "green" }}>
       <h1>This is B Component</h1>
       <h1>The movie name is {stateObject.movie}</h1>
-      <button>Change Director</button>
+      <button style={{ margin: "10px" }} onClick={changeHandler}>
+        Change Director
+      </button>
     </div>
   );
 };
