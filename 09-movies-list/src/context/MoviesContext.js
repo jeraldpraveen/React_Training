@@ -13,6 +13,7 @@ export class MoviesProvider extends Component {
 
   addMovie = (movie) => {
     console.log(movie);
+    this.setState({ movies: [...this.state.movies, movie] });
   };
 
   render() {
