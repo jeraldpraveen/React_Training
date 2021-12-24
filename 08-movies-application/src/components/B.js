@@ -6,7 +6,7 @@ const B = () => {
   return (
     <div>
       <h1>This is B Component</h1>
-      <h1>{stateObject.director}</h1>
+      <h1>The movie name is {stateObject.movie}</h1>
     </div>
   );
 };

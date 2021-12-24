@@ -6,7 +6,7 @@ const A = () => {
   return (
     <div>
       <h1>This is A Component</h1>
-      <h1>{stateObject.director}</h1>
+      <h1>The director name is {stateObject.director}</h1>
     </div>
   );
 };
