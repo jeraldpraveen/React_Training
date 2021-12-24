@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-export const MoviesProvider = React.createContext();
+export const MoviesContext = React.createContext();
 
-export class MoviesContext extends Component {
+export class MoviesProvider extends Component {
   constructor() {
     super();
     this.state = {
@@ -12,8 +12,12 @@ export class MoviesContext extends Component {
   }
 
   render() {
-    return <div></div>;
+    return (
+      <MoviesContext.Provider value={{ ...this.state }}>
+        {this.props.children}
+      </MoviesContext.Provider>
+    );
   }
 }
 
-export default MoviesContext;
+export default MoviesProvider;
