@@ -4,13 +4,16 @@ export const MoviesContext = React.createContext();
 
 export class MoviesProvider extends Component {
   constructor() {
+    super();
     this.state = {
       movies: [],
       addMovie: this.addMovie,
     };
   }
 
-  addMovie = () => {};
+  addMovie = (movie) => {
+    console.log(movie);
+  };
 
   render() {
     return (

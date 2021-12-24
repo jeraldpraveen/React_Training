@@ -1,8 +1,11 @@
 import React, { useState, useContext } from "react";
+import { MoviesContext } from "../context/MoviesContext";
 
 const AddMovie = () => {
   const [movieName, setMovieName] = useState("");
   const [directorName, setDirectorName] = useState("");
+
+  const context = useContext(MoviesContext);
 
   const movieHandler = (e) => {
     setMovieName(e.target.value);
@@ -13,11 +16,11 @@ const AddMovie = () => {
   };
 
   const addHandler = (event) => {
-    event.preventDefaults();
     var movie = {
       movieName,
       directorName,
     };
+    context.addMovie(movie);
   };
 
   return (
