@@ -13,12 +13,12 @@ export class MoviesProvider extends Component {
     };
   }
 
-  changeMovie = () => {
-    this.setState({ movie: "2.0" });
+  changeMovie = (movie) => {
+    this.setState({ movie });
   };
 
-  changeDirector = () => {
-    this.setState({ director: "Hari" });
+  changeDirector = (director) => {
+    this.setState({ director });
   };
 
   render() {

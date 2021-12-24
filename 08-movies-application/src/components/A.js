@@ -5,7 +5,7 @@ const A = () => {
   const stateObject = useContext(MoviesContext);
 
   const changeHandler = () => {
-    stateObject.changeMovie();
+    stateObject.changeMovie("Avatar");
   };
 
   return (

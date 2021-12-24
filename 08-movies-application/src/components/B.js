@@ -5,7 +5,7 @@ const B = () => {
   const stateObject = useContext(MoviesContext);
 
   const changeHandler = () => {
-    stateObject.changeDirector();
+    stateObject.changeDirector("James");
   };
 
   return (
