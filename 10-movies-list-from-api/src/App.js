@@ -25,8 +25,10 @@ function App() {
         };
       });
       setMovies(transformedMovies);
+      setError(null);
     } catch (error) {
       setError(error.message);
+      setMovies([]);
     }
     setIsLoading(false);
   };
@@ -38,7 +40,8 @@ function App() {
       </section>
       <section>
         {!isLoading && movies.length > 0 && <MoviesList movies={movies} />}
-        {!isLoading && movies.length === 0 && <p>No Movies Found</p>}
+        {!isLoading && movies.length === 0 && !error && <p>No Movies Found</p>}
+        {!isLoading && error && <p>{error}</p>}
         {isLoading && <p>Loading...</p>}
       </section>
     </React.Fragment>
