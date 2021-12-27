@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import MoviesList from "./components/MoviesList";
 import "./App.css";
 
+var boo = true;
 function App() {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -33,7 +34,10 @@ function App() {
     setIsLoading(false);
   };
 
-  fetchMoviesHandler();
+  if (boo) {
+    fetchMoviesHandler();
+    boo = false;
+  }
 
   let content = <p>Found no movies.</p>;
 
