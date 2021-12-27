@@ -33,6 +33,8 @@ function App() {
     setIsLoading(false);
   };
 
+  fetchMoviesHandler();
+
   let content = <p>Found no movies.</p>;
 
   if (movies.length > 0) {
