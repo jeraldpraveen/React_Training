@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useMemo } from "react";
 import Button from "./components/UI/Button/Button";
 import DemoOutput from "./components/Demo/DemoOutput";
 import DemoList from "./components/Demo/DemoList";
@@ -32,13 +32,15 @@ function App() {
     });
   }, []);
 
+  const listItems = useMemo(() => [5, 3, 1, 10, 9], []);
+
   return (
     <div className="app">
       <h1>Hi there!</h1>
       <DemoOutput show={showPara} />
       <Button onClick={allowToggleHandler}>Allow Toggle</Button>
       <Button onClick={toggleParaHandler}>Para Hide/Show</Button>
-      <DemoList title={listTitle} items={[5, 3, 1, 10, 9]} />
+      <DemoList title={listTitle} items={listItems} />
       <Button onClick={changeTitleHandler}>Change Title</Button>
     </div>
   );
