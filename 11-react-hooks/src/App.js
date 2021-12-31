@@ -7,6 +7,7 @@ import "./App.css";
 function App() {
   const [showPara, setShowPara] = useState(false);
   const [allowToggle, setAllowToggle] = useState(false);
+  const [batch, setBatch] = useState(false);
 
   console.log("APP RUNNING");
 
@@ -18,6 +19,7 @@ function App() {
 
   const allowToggleHandler = () => {
     setAllowToggle(true);
+    setBatch(true);
   };
 
   return (
