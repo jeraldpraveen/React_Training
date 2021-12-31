@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="app">
       <h1>Hi there!</h1>
-      <DemoOutput show={showPara} />
+      <DemoOutput show={false} />
       <Button onClick={toggleParaHandler}>Para Hide/Show</Button>
     </div>
   );
