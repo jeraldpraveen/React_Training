@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import Button from "./components/UI/Button/Button";
 import DemoOutput from "./components/Demo/DemoOutput";
 
@@ -9,9 +9,9 @@ function App() {
 
   console.log("APP RUNNING");
 
-  const toggleParaHandler = () => {
+  const toggleParaHandler = useCallback(() => {
     setShowPara((prevShowPara) => !prevShowPara);
-  };
+  }, []);
 
   return (
     <div className="app">
@@ -23,3 +23,9 @@ function App() {
 }
 
 export default App;
+
+// let obj1 = {};
+// let obj2 = {};
+// obj1 === obj2;
+//obj2 = obj1;
+// obj1 === obj2;
