@@ -23,7 +23,13 @@ function App() {
   };
 
   const changeTitleHandler = useCallback(() => {
-    setListTitle("New Title");
+    setListTitle((prevTitle) => {
+      if (prevTitle === "My List") {
+        return "New Title";
+      } else {
+        return "My List";
+      }
+    });
   }, []);
 
   return (

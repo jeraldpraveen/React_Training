@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useMemo } from "react";
 
 const DemoList = (props) => {
+  const { items } = props;
+
   console.log("DemoList Running");
-  const sortedList = props.items.sort((a, b) => a - b);
+
+  const sortedList = useMemo(() => {
+    console.log("Items Sorted");
+    return items.sort((a, b) => a - b);
+  }, [items]);
 
   return (
     <div style={{ backgroundColor: "yellowgreen" }}>
