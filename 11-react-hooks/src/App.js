@@ -1,13 +1,14 @@
 import React, { useState, useCallback } from "react";
 import Button from "./components/UI/Button/Button";
 import DemoOutput from "./components/Demo/DemoOutput";
+import DemoList from "./components/Demo/DemoList";
 
 import "./App.css";
 
 function App() {
   const [showPara, setShowPara] = useState(false);
   const [allowToggle, setAllowToggle] = useState(false);
-  const [batch, setBatch] = useState(false);
+  const [listTitle, setListTitle] = useState("My List");
 
   console.log("APP RUNNING");
 
@@ -19,8 +20,11 @@ function App() {
 
   const allowToggleHandler = () => {
     setAllowToggle(true);
-    setBatch(true);
   };
+
+  const changeTitleHandler = useCallback(() => {
+    setListTitle("New Title");
+  }, []);
 
   return (
     <div className="app">
@@ -28,6 +32,8 @@ function App() {
       <DemoOutput show={showPara} />
       <Button onClick={allowToggleHandler}>Allow Toggle</Button>
       <Button onClick={toggleParaHandler}>Para Hide/Show</Button>
+      <DemoList title={listTitle} items={[5, 3, 1, 10, 9]} />
+      <Button onClick={changeTitleHandler}>Change Title</Button>
     </div>
   );
 }
