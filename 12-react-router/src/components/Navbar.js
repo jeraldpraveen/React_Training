@@ -1,9 +1,14 @@
 import React from "react";
+import "./Navbar.css";
 
 const Navbar = () => {
   return (
     <div>
-      <h1>Navbar</h1>
+      <ul>
+        <li>Home</li>
+        <li>Contact Us</li>
+        <li>Services</li>
+      </ul>
     </div>
   );
 };
